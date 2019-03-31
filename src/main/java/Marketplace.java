@@ -1,5 +1,8 @@
 package com.gracefulcode.opengine;
 
+import com.github.opengine.resource.Resource;
+import java.util.HashMap;
+
 public class Marketplace {
 	protected HashMap<Class<? extends Resource>, Integer> supply;
 	protected HashMap<Class<? extends Resource>, Integer> demand;
