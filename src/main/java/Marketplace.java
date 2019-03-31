@@ -22,6 +22,6 @@ public class Marketplace<T extends Class<? extends Resource>> {
 	}
 
 	public String toString() {
-		return "Market: supply: " + this.supply.toString() + ", demand: " + this.demand.toString();
+		return "Market: supply: " + (this.supply == null ? "null" : this.supply.toString()) + ", demand: " + (this.demand == null ? "null" : this.demand.toString());
 	}
 }
