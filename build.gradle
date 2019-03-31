@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+    id 'maven'
+}
+
+group 'com.github.opengine'
+
+dependencies {
+    compile 'com.github.opengine:resources:-SNAPSHOT'
+}
+
+repositories {
+    jcenter()
+
+    maven {
+        url "https://jitpack.io"
+    }
+}
