@@ -7,6 +7,16 @@ public class Marketplace<T extends Class<? extends Resource>> {
 	protected HashMap<T, Integer> supply;
 	protected HashMap<T, Integer> demand;
 
+	public Integer getSupply(T cls) {
+		if (this.supply == null) return 0;
+		return this.supply.getOrDefault(cls, 0);
+	}
+
+	public Integer getDemand(T cls) {
+		if (this.demand == null) return 0;
+		return this.demand.getOrDefault(cls, 0);
+	}
+
 	public void addSupply(T cls, int amount) {
 		if (this.supply == null) {
 			this.supply = new HashMap<T, Integer>();
@@ -18,7 +28,7 @@ public class Marketplace<T extends Class<? extends Resource>> {
 		if (this.demand == null) {
 			this.demand = new HashMap<T, Integer>();
 		}
-		this.supply.put(cls, this.demand.getOrDefault(cls, 0) + amount);
+		this.demand.put(cls, this.demand.getOrDefault(cls, 0) + amount);
 	}
 
 	public String toString() {
