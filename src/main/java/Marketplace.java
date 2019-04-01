@@ -12,6 +12,17 @@ public class Marketplace<T extends Class<? extends Resource>> {
 		return this.supply.getOrDefault(cls, 0);
 	}
 
+	public Integer getNetSupply(T cls) {
+		int total = 0;
+		if (this.supply != null) {
+			total += this.supply.getOrDefault(cls, 0);
+		}
+		if (this.demand != null) {
+			total -= this.demand.getOrDefault(cls, 0);
+		}
+		return total;
+	}
+
 	public Integer getDemand(T cls) {
 		if (this.demand == null) return 0;
 		return this.demand.getOrDefault(cls, 0);
